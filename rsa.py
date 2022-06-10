@@ -56,6 +56,9 @@ def encrypt(plain_text, public_key):
     for x in encrypted_integers:
         c = chr(x)
         encrypted_text += str(c)
+    
+    # sanitize
+    encrypted_text = encrypted_text.encode('utf-8', 'replace').decode('utf-8')
 
     return encrypted_text
 
